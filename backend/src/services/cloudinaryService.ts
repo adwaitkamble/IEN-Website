@@ -16,7 +16,7 @@ export const uploadToCloudinary = (
 
     const stream = cloudinary.uploader.upload_stream(
       { folder },
-      (error, result) => {
+      (error: any, result: any) => {
 
         if (result) resolve(result);
         else reject(error);
