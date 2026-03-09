@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+/* ================= BASE ================= */
+@layer base {
+  body {
+    @apply bg-navy-950 text-slate-300 overflow-x-hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-white;
+  }
+}
+
+/* ================= UTILITIES ================= */
+@layer utilities {
+
+  /* Glass effects */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .glass-dark {
+    @apply bg-navy-900/50 backdrop-blur-md border border-white/10;
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-navy-400 to-navy-200 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300 bg-clip-text text-transparent;
+  }
+
+  /* Background Gradient */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-navy-900 to-navy-950;
+  }
+
+  /* Hide Scrollbar */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Smooth GPU rendering */
+  .gpu {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Subtle Animated Background */
+  .bg-animated-gradient {
+    background: linear-gradient(270deg, #0f172a, #0b1c35, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientMove 18s ease infinite;
+  }
+}
+
+/* ================= KEYFRAMES ================= */
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
